@@ -9,6 +9,6 @@
 <% @tasks.each do |task| %>
 <p><%= task.name %>
 <%= task.description %>
-<%= task.status %>
+<%= task.status ? "completed" : "incomplete" %>
 <%= task.date %></p>
 <%end%>

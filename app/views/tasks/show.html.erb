@@ -4,6 +4,6 @@
 <ul>
   <li> name: <%= @task.name %> </li>
   <li> description: <%= @task.description %> </li>
-  <li> status: <%= @task.status %> </li>
+  <li> status: <%= @task.status ? "completed" : "incomplete"%></li>
   <li> date completed: <%= @task.date %> </li>
 </ul>
