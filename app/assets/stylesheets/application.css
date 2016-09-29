@@ -1,15 +1,134 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+body {
+  font-weight: 100;
+  font-size: 1.5em;
+  font-style: normal;
+  font-family: courier;
+  text-align: justify;
+  text-decoration: none;
+  list-style-type: none;
+  background-color: background: #fc00ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #fc00ff , #00dbde); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #fc00ff , #00dbde);
+}
+
+ul li{
+  list-style-type: none;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: Mathlete-Bulky;
+  src: url(mathlete/Mathlete-Bulky.otf);
+}
+@font-face {
+  font-family: Mathlete-BulkySlant;
+  src: url(mathlete/Mathlete-BulkySlant.otf);
+}
+@font-face {
+  font-family: Mathlete-Skinny;
+  src: url(mathlete/Mathlete-Skinny.otf);
+}
+@font-face {
+  font-family: Mathlete-SkinnySlant;
+  src: url(mathlete/Mathlete-SkinnySlant.otf);
+}
+@font-face {
+  font-family: AlexBrush-Regular;
+  src: url(./fonts/alex-brush/AlexBrush-Regular.ttf)
+}
+@font-face {
+  font-family: JosefinSlab-Thin;
+  src: url(./fonts/josefin-slab/JosefinSlab-Thin.ttf)
+}
+
+font-family: Raleway-LightItalic;
+src: url(./fonts/raleway/Raleway-LightItalic.ttf)
+}
+@font-face {
+  font-family: Lekton-Italic;
+  src: url(./fonts/lekton/Lekton-Italic.ttf)
+}
+
+p{
+  text-align: left;
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  width: 300px;
+  font-family: Mathlete-Skinny;
+  font-weight: 200;
+}
+
+html, body { height: 100%; }
+
+.begintask{
+  font-family: Mathlete-Skinny;
+  font-weight: 200;
+  font-size: 3rem;
+}
+
+.title{
+  font-family: AlexBrush-Regular;
+  text-align: center;
+}
+.img {
+  position: relative;
+  float: left;
+  width:  100px;
+  height: 100px;
+  background-position: 50% 50%;
+  background-repeat:   no-repeat;
+  background-size:     cover;
+}
+
+article {
+  border-bottom: papayawhip solid thin;
+  width: 200px;
+}
+
+li a{
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.navigation {
+  z-index: 30;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: papayawhip;
+}
+.link {
+  font-family: Raleway-LightItalic;
+  text-decoration: underline;
+}
+
+a:-webkit-any-link {
+  color: #18ffff
+  text-decoration: underline;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #90caf9;
+}
