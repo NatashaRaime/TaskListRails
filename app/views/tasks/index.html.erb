@@ -1,5 +1,6 @@
 
 
+<<<<<<< Updated upstream
 <h1> Good Afternoon <h1>
 <p> Toggle this link to submit a new task
 <%= link_to "Create New Task", tasks_new_path %>
@@ -12,3 +13,35 @@
 <%= task.status ? "completed" : "incomplete" %>
 <%= task.date %></p>
 <%end%>
+=======
+<h1 class="title"> Good Afternoon! Toggle the link below to submit a new task</h1>
+<h2 class="link"><%= link_to "Create New Task", tasks_new_path %></h2>
+<h2 class="link"><%= link_to "Show Task", task_path(:id)%></h2>
+<h2 class="link"><%= link_to "Delete", tasks_delete_path%></h2>
+<h2 class="link"><%= link_to "Edit", task_edit_path(t)%></h2>
+<h2 class="link"><%= link_to "Update" task_update_path(t)%>
+
+<% if @tasks.blank? %>
+<p>You have no listed tasks</p>
+<% else %>
+
+<h1 class="begintask"> Your Tasks To Date: </h1>
+
+<% @tasks.each do |t| %>
+
+  <article>
+    <p>Task <%= task.id %></p>
+    <p><%= task.name %></p>
+    <p><%= task.description %></p>
+    <p><%= task.status %></p>
+    <p><%= task.date %></p>
+  </article>
+  <%end%>
+
+  <li>
+     <%= link_to c.title, {:action => "show", :id => t.id} -%>
+     <b> <%= link_to 'Edit', {:action => "edit",
+     :id => t.id} %>
+   </b>
+  </li>
+>>>>>>> Stashed changes

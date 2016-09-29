@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   root 'tasks#index'
   get '/tasks/new' => 'tasks#new'
-  get '/tasks/:id' => 'tasks#show'
-
   get '/tasks' => 'tasks#index'
+  get '/tasks/show' => 'tasks#show'
   post '/tasks' => 'tasks#create'
-  get '/tasks/:id', to: 'tasks#show', as: 'task'
+  get 'tasks/delete' => 'tasks#delete'
+  get '/tasks/show', to: 'tasks#show', as: 'task'
+  patch 'tasks/update' => 'tasks#update'
+  get 'tasks/edit/:id' => 'tasks#edit'
+
 #added an as clause,
 #route prefix = task_path (will always look for id, we think?)
 

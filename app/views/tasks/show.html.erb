@@ -1,9 +1,14 @@
 
-
+<h1> Which Task (by id) Would You Like To See? </h1>
+<h2><%= text_field_tag "", :id %><h2>
 
 <ul>
   <li> name: <%= @task.name %> </li>
   <li> description: <%= @task.description %> </li>
+<<<<<<< Updated upstream
   <li> status: <%= @task.status ? "completed" : "incomplete"%></li>
+=======
+  <li> status: <%= @task.status ? "completed" : "incomplete "%> </li>
+>>>>>>> Stashed changes
   <li> date completed: <%= @task.date %> </li>
 </ul>
