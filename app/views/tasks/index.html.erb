@@ -1,0 +1,14 @@
+
+
+<h1> Good Afternoon <h1>
+<p> Toggle this link to submit a new task
+<%= link_to "Create New Task", tasks_new_path %>
+
+</p>
+<h1> Your Tasks </h1>
+<% @tasks.each do |task| %>
+<p><%= task.name %>
+<%= task.description %>
+<%= task.status %>
+<%= task.date %></p>
+<%end%>
