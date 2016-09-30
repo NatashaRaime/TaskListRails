@@ -13,7 +13,7 @@
   <article>
   <h1 class="begintask"> Your Tasks To Date: </h1>
   <h2 class="link"><%= link_to "Show Task", task_path(t)%></h2>
-  <h2 class="link"><%= link_to "Edit", tasks_edit_path(t) %></h2>
+  <h2 class="link"><%= link_to "Edit", edit_path(t) %></h2>
   <p><%= t.name %>
   <%= t.description %>
   <%= t.status %>
