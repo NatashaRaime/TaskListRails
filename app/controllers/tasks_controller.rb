@@ -8,29 +8,22 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
-
-
-  def show
-    @task = Task.find(params[:id])
-    puts @task
+  def create
+  @task = Task.new(task_params)
+    if @task.save
+  redirect_to @task
+    else
+  render 'new'
+    end
   end
-end
-
-def delete
-    @task = Task.find(params[:id])
-    @task.destroy
-    redirect_to tasks_path(@task)
-end
 
 def destroy
-    @task = Task.find(params[:id])
-    @task.destroy
+    @task = Task.find(params[:id]).destroy
     redirect_to tasks_path
 end
 
 def edit
-   @task = Task.find(params[:id])
-
+  @task = Task.find(params[:id])
   if @task.update(task_params)
     redirect_to tasks_path
   else
@@ -38,12 +31,9 @@ def edit
   end
 end
 
-def create
-@task = Task.new(task_params)
-  if @task.save
-redirect_to @task
-  else
-render 'new'
+  def show
+    @task = Task.find(params[:id])
+    puts @task
   end
 end
 
