@@ -1,7 +1,7 @@
 
 <h1 class="title"> Good Afternoon! Toggle the link below to submit a new task</h1>
 <h2 class="link"><%= link_to "Create New Task", tasks_new_path %></h2>
-<h2 class="link"><%= link_to "Show Task", task_path(params[:id])%></h2>
+
 
 
 
@@ -12,16 +12,13 @@
   <% @tasks.each do |t| %>
   <article>
   <h1 class="begintask"> Your Tasks To Date: </h1>
+  <h2 class="link"><%= link_to "Show Task", task_path(t)%></h2>
+  <h2 class="link"><%= link_to "Edit", tasks_edit_path(t) %></h2>
   <p><%= t.name %>
   <%= t.description %>
   <%= t.status %>
   <%= t.date %></p>
-
-<h2 class="link"><%= link_to "Delete", task_path(t), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }
-   %></h2>
-   <%=  %>
-    
-    </h2>
-  </article>
+<h2 class="link"><%= link_to "Delete", task_path(t), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %></h2>
+    </article>
   <%end%>
 <%end%>

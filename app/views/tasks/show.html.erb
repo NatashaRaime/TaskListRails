@@ -5,10 +5,8 @@
 <ul>
   <li> name: <%= @task.name %> </li>
   <li> description: <%= @task.description %> </li>
-<<<<<<< Updated upstream
   <li> status: <%= @task.status ? "completed" : "incomplete"%></li>
-=======
-  <li> status: <%= @task.status ? "completed" : "incomplete "%> </li>
->>>>>>> Stashed changes
   <li> date completed: <%= @task.date %> </li>
+  <h2 class="link"><%= link_to "back", tasks_path%></h2>
+  <h2 class="link"><%= link_to 'Edit', tasks_edit_path(@task) %></h2>
 </ul>
