@@ -1,0 +1,10 @@
+
+  <h2 class="link"><%= link_to "back", tasks_path%></h2>
+  <h2><%= form_for @task do |f| %>
+      Name:<%= f.text_field :name %>
+      Description:<%= f.text_field :description%>
+      Completed:<%= f.check_box :status %>
+      <label for="date">Date Completed</label>
+      <input type="date" name="task[date]" id="date">
+      <%= f.submit "Create" %></h2>
+    <% end %>

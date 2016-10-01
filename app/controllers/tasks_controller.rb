@@ -24,11 +24,6 @@ end
 
 def edit
   @task = Task.find(params[:id])
-  if @task.update(task_params)
-    redirect_to tasks_path
-  else
-    render 'edit'
-  end
 end
 
   def show
@@ -37,12 +32,17 @@ end
   end
 end
 
+def search
+  redirect_to search_path(params[:q])
+end
+
 def update
-   @task = Task.find(params[:id])
-   if @task.update(task_params)
-     redirect_to @task
-  else render 'edit'
-   end
+  @task = Task.new(task_params).update
+    if @task.update
+  redirect_to @task
+    else
+  render 'edit'
+    end
 end
 
 private
