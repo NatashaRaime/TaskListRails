@@ -4,12 +4,13 @@ Rails.application.routes.draw do
   root  'tasks#index'
   get 'tasks' => 'tasks#index'
   get '/tasks/new' => 'tasks#new'
-  post  '/tasks'   => 'tasks#create'
+  post  '/tasks/'   => 'tasks#create'
   get '/tasks/:id', to: 'tasks#show', as: 'task'
+  post '/tasks/:id/', to: 'tasks#search', as: 'search'
   patch '/tasks/:id/' => 'tasks#update'
   get '/tasks/:id/edit' => 'tasks#edit', as: 'edit'
   delete '/tasks/:id', to: 'tasks#destroy', as: 'delete'
-  get 'tasks/:q/search' => 'tasks#search', as: 'search'
+
 
 
 

@@ -33,7 +33,7 @@ end
 end
 
 def search
-  redirect_to search_path(params[:q])
+
 end
 
 def update

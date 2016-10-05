@@ -1,5 +1,4 @@
-
-  <h2 class="link"><%= link_to "back", tasks_path%></h2>
+ <h2 class="link"><%= link_to "back", tasks_path%></h2>
   <h2><%= form_for @task do |f| %>
       Name:<%= f.text_field :name %>
       Description:<%= f.text_field :description%>
@@ -8,3 +7,28 @@
       <input type="date" name="task[date]" id="date">
       <%= f.submit "Create" %></h2>
     <% end %>
+
+
+
+    <h1> Edit Task </h1>
+    <h2 class="link"><%= link_to "back", tasks_path%></h2>
+    <form action="/tasks/update" method="patch" accept-charset="utf-8">
+
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+      <label for="name">Name</label>
+      <input type="text" name="task[name]" value="" id="name">
+
+      <label for="description">Description</label>
+      <input type="text" name="task[description]" value="" id="description">
+
+      <label for="status">Completed</label>
+      <input type="checkbox"  name="task[status]" value="true" id="status">
+
+      <label for="date">Date Completed</label>
+      <input type="date" name="task[date]" id="date">
+
+
+
+      <input type="submit" value="Submit">
+    </form>

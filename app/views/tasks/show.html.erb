@@ -2,12 +2,8 @@
 
 <h2 class="link"><%= link_to "back", tasks_path%></h2>
 
-<h1> Which Task (by id) Would You Like To See? </h1>
-<h2><%= form_for 'search' do |f| %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<%end %>
+
+
 
 <ul>
   <li> name: <%= @task.name %> </li>
@@ -15,3 +11,9 @@
   <li> status: <%= @task.status ? "completed" : "incomplete" %></li>
   <li> date completed: <%= @task.date %> </li>
 </ul>
+
+  <h1> Which Task (by id) Would You Like To See? </h1>
+  <h2><%= form_for 'search' do |f| %>
+    <%= f.text_field(:q) %>
+    <%= f.submit("Search") %>
+<%end %>
