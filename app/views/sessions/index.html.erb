@@ -1,0 +1,21 @@
+<h1>Congratulations <%= "#{@user.email}" %>, You are now a Task Master. Your tasks will queue here.
+
+
+  <% if @user.tasks.blank? %>
+    <p>You have no listed tasks</p>
+
+  <% else %>
+    <h1 class="begintask"> Your Tasks To Date: </h1>
+    <% @tasks.each do |t| %>
+    <article>
+    <h2 class="link"><%= link_to "Show Task", task_path(t)%></h2>
+    <h2 class="link"><%= link_to "Edit", edit_path(t) %></h2>
+    <p>
+    <%= t.name %>
+    <%=t.description%>
+    <%= t.status ? "completed" : "incomplete" %>
+    <%= t.date %></p>
+  <h2 class="link"><%= link_to "Delete", task_path(t), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %></h2>
+      </article>
+    <%end%>
+  <%end%>

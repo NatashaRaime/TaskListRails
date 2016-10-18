@@ -8,6 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <h1 class="title"> Good Afternoon!</h1>
+  <h2 class="link"><%= button_to "login", login_path, method: :get %></h2>
+  <h2 class="link"><%= button_to "Create New Task", tasks_new_path %></h2>
+  <h2 class="link"><%= button_to "Home", tasks_path%></h2>
+  <h2 class="link"><%= button_to "logout", logout_path(:id), method: :delete %></h2>
 
 <%= yield %>
 
